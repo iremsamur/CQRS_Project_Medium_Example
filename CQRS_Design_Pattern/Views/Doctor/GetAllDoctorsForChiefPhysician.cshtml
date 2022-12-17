@@ -1,0 +1,41 @@
+﻿@model List<GetAllDoctorsForChiefPhysicianQueryResult>
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<h1>Başhekim Paneli : Doktor Bilgileri</h1>
+<div class="container">
+    <br>
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Hastane Adı</th>
+            <th>Poliklinik Adı</th>
+            <th>Hasta Sayısı</th>
+            <th>Sicil No</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DoctorID</td>
+                <td>@item.Name</td>
+                <td>@item.Surname</td>
+                <td>@item.HospitalName</td>
+                <td>@item.PoliclinicName</td>
+                <td>@item.PatientNumber</td>
+                <td>@item.RegistrationNumber</td>
+          
+                <td><a href="/Doctor/DeleteDoctor/@item.DoctorID" class="btn btn-outline-danger">Sil</a></td>
+                <td><a href="/Doctor/UpdateDoctor/@item.DoctorID" class="btn btn-outline-success">Güncelle</a></td>
+            </tr>
+
+        }
+
+    </table>
+    <a href="/Doctor/AddDoctor" class="btn btn-outline-primary">Yeni Doktor Kaydı</a>
+
+</div>

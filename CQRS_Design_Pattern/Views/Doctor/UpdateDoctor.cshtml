@@ -1,0 +1,52 @@
+﻿@model GetDoctorByIDForChiefPhysicianQueryResult
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<h1>Başhekim Paneli : Doktor Güncelleme Ekranı</h1>
+<br />
+<div class="container">
+    <form method="post">
+        <input type="hidden" asp-for="DoctorID" />
+
+        <label>
+            Doktor Adı
+        </label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <br />
+        <label>
+            Doktor Soyadı
+        </label>
+        <input type="text" asp-for="Surname" class="form-control" />
+        <br />
+       
+        <label>
+            Hastane Adı
+        </label>
+        <input type="text" asp-for="HospitalName" class="form-control" />
+        <br />
+
+
+        <label>
+            Poliklinik Adı
+        </label>
+        <input type="text" asp-for="PoliclinicName" class="form-control" />
+        <br />
+        <label>
+            Sicil Numarası
+        </label>
+        <input type="text" asp-for="RegistrationNumber" class="form-control" />
+        <br />
+        <label>
+            Hasta Sayısı
+        </label>
+        <input type="text" asp-for="PatientNumber" class="form-control" />
+        <br />
+        <button class="btn btn-danger">Güncelle</button>
+
+
+    </form>
+
+</div>
+
